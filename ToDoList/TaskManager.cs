@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ToDoList
-{ //class is storing Task object inside the List
+{
+    //class is storing Task object inside the List
     class TaskManager
     {
         private List<Task> taskList;

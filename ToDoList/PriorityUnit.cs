@@ -8,8 +8,8 @@ namespace ToDoList
 {
     enum PriorityUnit
     {
-        lessImportant,
-        important,
-        veryImportant
+        less_Important,
+        Important,
+        very_Important
     }
 }

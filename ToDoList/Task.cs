@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
+    //class is saving to do tasks into a object
     class Task
     {
         private DateTime date;
@@ -13,7 +14,7 @@ namespace ToDoList
         private PriorityUnit priority;
 
         //All of constractors
-        public Task() : this(DateTime.Now, "Unknow", PriorityUnit.important)
+        public Task() : this(DateTime.Now, "Unknow", PriorityUnit.Important)
         {
         }
         
