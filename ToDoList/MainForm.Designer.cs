@@ -38,13 +38,22 @@
             this.buttonChange = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBoxToDo = new System.Windows.Forms.GroupBox();
+            this.labelDescription = new System.Windows.Forms.Label();
+            this.labelPriorityBelow = new System.Windows.Forms.Label();
+            this.labelHour = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             this.listBoxTasks = new System.Windows.Forms.ListBox();
             this.labelTime = new System.Windows.Forms.Label();
-            this.labelDate = new System.Windows.Forms.Label();
-            this.labelHour = new System.Windows.Forms.Label();
-            this.labelPriorityBelow = new System.Windows.Forms.Label();
-            this.labelDescription = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxToDo.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelDateAndTime
@@ -69,10 +78,12 @@
             // 
             // dateTimePickerDate
             // 
+            this.dateTimePickerDate.CustomFormat = "yyy-MM-dd             HH:mm";
             this.dateTimePickerDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDate.Location = new System.Drawing.Point(162, 71);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(250, 23);
+            this.dateTimePickerDate.Size = new System.Drawing.Size(183, 23);
             this.dateTimePickerDate.TabIndex = 2;
             // 
             // labelPriority
@@ -112,6 +123,7 @@
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonChange
             // 
@@ -148,8 +160,45 @@
             this.groupBoxToDo.TabStop = false;
             this.groupBoxToDo.Text = "To do:";
             // 
+            // labelDescription
+            // 
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Location = new System.Drawing.Point(428, 31);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(79, 17);
+            this.labelDescription.TabIndex = 4;
+            this.labelDescription.Text = "Description";
+            // 
+            // labelPriorityBelow
+            // 
+            this.labelPriorityBelow.AutoSize = true;
+            this.labelPriorityBelow.Location = new System.Drawing.Point(293, 32);
+            this.labelPriorityBelow.Name = "labelPriorityBelow";
+            this.labelPriorityBelow.Size = new System.Drawing.Size(52, 17);
+            this.labelPriorityBelow.TabIndex = 3;
+            this.labelPriorityBelow.Text = "Priority";
+            // 
+            // labelHour
+            // 
+            this.labelHour.AutoSize = true;
+            this.labelHour.Location = new System.Drawing.Point(182, 31);
+            this.labelHour.Name = "labelHour";
+            this.labelHour.Size = new System.Drawing.Size(39, 17);
+            this.labelHour.TabIndex = 2;
+            this.labelHour.Text = "Hour";
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(12, 31);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(38, 17);
+            this.labelDate.TabIndex = 1;
+            this.labelDate.Text = "Date";
+            // 
             // listBoxTasks
             // 
+            this.listBoxTasks.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxTasks.FormattingEnabled = true;
             this.listBoxTasks.ItemHeight = 16;
             this.listBoxTasks.Location = new System.Drawing.Point(16, 64);
@@ -167,41 +216,65 @@
             this.labelTime.TabIndex = 10;
             this.labelTime.Text = "Time";
             // 
-            // labelDate
+            // menuStrip1
             // 
-            this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(12, 31);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(38, 17);
-            this.labelDate.TabIndex = 1;
-            this.labelDate.Text = "Date";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(762, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // labelHour
+            // fileToolStripMenuItem
             // 
-            this.labelHour.AutoSize = true;
-            this.labelHour.Location = new System.Drawing.Point(178, 31);
-            this.labelHour.Name = "labelHour";
-            this.labelHour.Size = new System.Drawing.Size(39, 17);
-            this.labelHour.TabIndex = 2;
-            this.labelHour.Text = "Hour";
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openFileToolStripMenuItem,
+            this.saveFileToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // labelPriorityBelow
+            // newToolStripMenuItem
             // 
-            this.labelPriorityBelow.AutoSize = true;
-            this.labelPriorityBelow.Location = new System.Drawing.Point(293, 32);
-            this.labelPriorityBelow.Name = "labelPriorityBelow";
-            this.labelPriorityBelow.Size = new System.Drawing.Size(52, 17);
-            this.labelPriorityBelow.TabIndex = 3;
-            this.labelPriorityBelow.Text = "Priority";
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Text = "New    Ctrl+N";
             // 
-            // labelDescription
+            // openFileToolStripMenuItem
             // 
-            this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(475, 31);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(79, 17);
-            this.labelDescription.TabIndex = 4;
-            this.labelDescription.Text = "Description";
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openFileToolStripMenuItem.Text = "Open";
+            // 
+            // saveFileToolStripMenuItem
+            // 
+            this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveFileToolStripMenuItem.Text = "Save";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Text = "Exit      Alt+F4";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // MainForm
             // 
@@ -219,10 +292,14 @@
             this.Controls.Add(this.dateTimePickerDate);
             this.Controls.Add(this.labelToDo);
             this.Controls.Add(this.labelDateAndTime);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "TO DO LIST";
             this.groupBoxToDo.ResumeLayout(false);
             this.groupBoxToDo.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +323,14 @@
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelPriorityBelow;
         private System.Windows.Forms.Label labelHour;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

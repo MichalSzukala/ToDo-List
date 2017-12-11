@@ -49,7 +49,8 @@ namespace ToDoList
         public override string ToString()
         {
             string textOut = string.Empty;
-            textOut = string.Format("{0, -40} {1, 6:f2} {2, -6}", date, priority, description);
+            //string date = "sss";
+            textOut = string.Format("{0, -19} {1, -11} {2, -20} {3, -20}", date.ToShortDateString(), date.ToShortTimeString(), priority, description);
             return textOut;
         }
 
