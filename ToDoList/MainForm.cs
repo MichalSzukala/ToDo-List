@@ -25,6 +25,7 @@ namespace ToDoList
         {
             comboBoxPriority.Items.AddRange(Enum.GetNames(typeof(PriorityUnit)));
             comboBoxPriority.SelectedIndex = (int)PriorityUnit.Important;
+            DisableButtons();
         }
 
         //is checking if all the imput is valid
@@ -88,6 +89,8 @@ namespace ToDoList
         //printing shoping list and updating all the fields
         private void UpdateGUI()
         {
+            DisableButtons();
+
             listBoxTasks.Items.Clear();
             listBoxTasks.Items.AddRange(taskManager.GetItemsInfoString());
             textBoxDescription.Clear();
@@ -104,47 +107,66 @@ namespace ToDoList
             }
         }
 
+        //event handler for button Edit
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            int index = listBoxTasks.SelectedIndex;
+            if (index >= 0 && ReadInput())
+            {
+                Task singleItem = SingleTask();
+                taskManager.ChangeItem(singleItem, index);
+                UpdateGUI();
+            }
+        }
 
+        //event handler for button Delete
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
 
+            int index = listBoxTasks.SelectedIndex;
+            if (index >= 0)
+            {
+                DialogResult result = ConfirmationWindow("Do you really want to delete task?");
+                if (result == DialogResult.OK)
+                {
+                    taskManager.DeleteItem(index);
+                    UpdateGUI();
+                }
+                else
+                {
+                    listBoxTasks.SelectedIndex = -1;
+                    UpdateGUI();
+                }
+            }
+        }
 
+    //Edit and Delete buttons are disable
+    private void DisableButtons()
+        {
+            buttonChange.Enabled = false;
+            buttonDelete.Enabled = false;
+        }
 
+        //Edit and Delete buttons are enable
+        private void EnableButtons()
+        {
+            buttonChange.Enabled = true;
+            buttonDelete.Enabled = true;
+        }
 
+        //event handler for listBox
+        private void listBoxTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (taskManager.Count() == 0 || listBoxTasks.SelectedIndex >= 0)
+                EnableButtons();
+        }
 
-
-
-
-
-
-
-
-
-
-
+        private DialogResult ConfirmationWindow(string message)
+        {
+            DialogResult result = MessageBox.Show(message, "Confirmation Window", MessageBoxButtons.OKCancel);
+            return result;
+            
+        }
         
-
-
-    ////event handler for button Delete
-    //private void buttonDelete_Click(object sender, EventArgs e)
-    //{
-    //    int index = listBoxShoppings.SelectedIndex;
-    //    if (index >= 0)
-    //    {
-    //        itemManager.DeleteItem(index);
-    //        UpdateGUI();
-    //    }
-    //}
-
-    ////event handler for button Edit
-    //private void buttonEdit_Click(object sender, EventArgs e)
-    //{
-    //    int index = listBoxShoppings.SelectedIndex;
-    //    if (index >= 0 && ReadInput())
-    //    {
-    //        ShoppingItem item = ShoppingIngredient();
-    //        itemManager.ChangeItem(item, index);
-    //        UpdateGUI();
-    //    }
-    //}
-
-}
+    }
 }

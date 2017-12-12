@@ -134,6 +134,7 @@
             this.buttonChange.TabIndex = 7;
             this.buttonChange.Text = "Change";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // buttonDelete
             // 
@@ -144,6 +145,7 @@
             this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // groupBoxToDo
             // 
@@ -190,7 +192,7 @@
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(12, 31);
+            this.labelDate.Location = new System.Drawing.Point(30, 32);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(38, 17);
             this.labelDate.TabIndex = 1;
@@ -205,6 +207,7 @@
             this.listBoxTasks.Name = "listBoxTasks";
             this.listBoxTasks.Size = new System.Drawing.Size(641, 292);
             this.listBoxTasks.TabIndex = 0;
+            this.listBoxTasks.SelectedIndexChanged += new System.EventHandler(this.listBoxTasks_SelectedIndexChanged);
             // 
             // labelTime
             // 
