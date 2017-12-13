@@ -13,7 +13,7 @@ namespace ToDoList
     //class is taking care of GUI and interaction with user
     public partial class MainForm : Form
     {
-        TaskManager taskManager = new TaskManager();
+        TaskManager taskManager; 
 
         public MainForm()
         {
@@ -23,9 +23,13 @@ namespace ToDoList
 
         private void InitializeGUI()
         {
+            taskManager = new TaskManager();
+            comboBoxPriority.Items.Clear();
             comboBoxPriority.Items.AddRange(Enum.GetNames(typeof(PriorityUnit)));
             comboBoxPriority.SelectedIndex = (int)PriorityUnit.Important;
             DisableButtons();
+            listBoxTasks.Items.Clear();
+            textBoxDescription.Clear();
         }
 
         //is checking if all the imput is valid
@@ -161,12 +165,59 @@ namespace ToDoList
                 EnableButtons();
         }
 
+        //popping up confirmation window
         private DialogResult ConfirmationWindow(string message)
         {
             DialogResult result = MessageBox.Show(message, "Confirmation Window", MessageBoxButtons.OKCancel);
             return result;
             
         }
-        
+
+        //displaying time on the label in MainForm
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        //starting timer
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+        }
+
+        //event handler for Menu/New
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = ConfirmationWindow("Do you really want to create new task list?");
+            if (result == DialogResult.OK)
+            {
+                InitializeGUI();
+            }
+        }
+
+        //event handler for Menu/Open
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                InitializeGUI();
+                MessageBox.Show("You open new file", "Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //event handler for Menu/Save
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You saved to the file", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //event handler for Menu/Exit
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = ConfirmationWindow("Do you really want to close program?");
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
