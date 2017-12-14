@@ -8,3 +8,16 @@ C:\Users\Z\Desktop\Sweden Courses\C#\kody\Modul6\ToDoList\ToDoList\obj\Debug\ToD
 C:\Users\Z\Desktop\Sweden Courses\C#\kody\Modul6\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
 C:\Users\Z\Desktop\Sweden Courses\C#\kody\Modul6\ToDoList\ToDoList\obj\Debug\ToDoList.exe
 C:\Users\Z\Desktop\Sweden Courses\C#\kody\Modul6\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
+C:\Users\Z\Desktop\Sweden Courses\C#\kody\Modul6\ToDoList\ToDoList\obj\Debug\ToDoList.AboutBoxInfo.resources
+C:\Users\Z\Desktop\Sweden Courses\C#\kody\Modul6\ToDoList\ToDoList\obj\Debug\ToDoList.AboutBox2.resources
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.MainForm.resources
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.csproj.GenerateResource.Cache
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.exe
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.pdb
+C:\Users\Z\Desktop\work\ToDoList\bin\Debug\ToDoList.exe.config
+C:\Users\Z\Desktop\work\ToDoList\bin\Debug\ToDoList.exe
+C:\Users\Z\Desktop\work\ToDoList\bin\Debug\ToDoList.pdb
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.Properties.Resources.resources
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
+C:\Users\Z\Desktop\work\ToDoList\obj\Debug\ToDoList.AboutBoxInfo.resources

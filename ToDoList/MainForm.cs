@@ -98,6 +98,10 @@ namespace ToDoList
             listBoxTasks.Items.Clear();
             listBoxTasks.Items.AddRange(taskManager.GetItemsInfoString());
             textBoxDescription.Clear();
+            comboBoxPriority.Items.Clear();
+            comboBoxPriority.Items.AddRange(Enum.GetNames(typeof(PriorityUnit)));
+            comboBoxPriority.SelectedIndex = (int)PriorityUnit.Important;
+            dateTimePickerDate.Value = DateTime.Now;
         }
 
         //event handler for button Add
@@ -161,8 +165,16 @@ namespace ToDoList
         //event handler for listBox
         private void listBoxTasks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (taskManager.Count() == 0 || listBoxTasks.SelectedIndex >= 0)
+            int index = listBoxTasks.SelectedIndex;
+            
+            if (index >= 0)
+            {
                 EnableButtons();
+                Task task = taskManager.GetItem(index);
+                dateTimePickerDate.Value = task.Date;
+                comboBoxPriority.SelectedIndex = (int)task.PriorityUnit;
+                textBoxDescription.Text = task.Description;
+            }
         }
 
         //popping up confirmation window
@@ -218,6 +230,14 @@ namespace ToDoList
             {
                 Application.Exit();
             }
+        }
+
+        //event handler for Menu/About
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBoxInfo aboutMe = new AboutBoxInfo();
+            aboutMe.Show();
+
         }
     }
 }

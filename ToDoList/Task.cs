@@ -45,6 +45,12 @@ namespace ToDoList
                     priority = value;
             }
         }
+        public DateTime Date
+        {
+            get { return date; }
+            set
+            { date = value; }
+        }
 
         public override string ToString()
         {
