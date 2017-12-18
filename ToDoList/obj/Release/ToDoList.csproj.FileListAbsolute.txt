@@ -1,0 +1,11 @@
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\bin\Release\ToDoList.exe.config
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\bin\Release\ToDoList.exe
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\bin\Release\ToDoList.pdb
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.csprojResolveAssemblyReference.cache
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.AboutBoxInfo.resources
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.MainForm.resources
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.Properties.Resources.resources
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.csproj.GenerateResource.Cache
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.csproj.CoreCompileInputs.cache
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.exe
+C:\Users\Z\Desktop\GitHub\ToDo-List\ToDoList\obj\Release\ToDoList.pdb
