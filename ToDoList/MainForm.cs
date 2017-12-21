@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ToDoList
 {
@@ -212,14 +213,38 @@ namespace ToDoList
         //event handler for Menu/Open
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                InitializeGUI();
-                MessageBox.Show("You open new file", "Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            openFileDialog.Filter = "Text files (*.txt)|*.txt";
+            openFileDialog.FileName = "*.txt";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader streamer = new StreamReader(openFileDialog.FileName);
+                string line;
+                while((line = streamer.ReadLine()) != null)
+                {
+                    listBoxTasks.Items.Add(line);
+                }
+            }
         }
 
         //event handler for Menu/Save
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You saved to the file", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            saveFileDialog.InitialDirectory = @"C:\";
+            saveFileDialog.Title = "Save text Files";
+            saveFileDialog.FileName = "*.txt";
+            saveFileDialog.CheckPathExists = true;
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt";
+            saveFileDialog.FilterIndex = 2;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter streamer = new StreamWriter(saveFileDialog.FileName);
+                foreach (object item in listBoxTasks.Items)
+                streamer.WriteLine(item.ToString());
+                streamer.Close();
+            }
         }
 
         //event handler for Menu/Exit
@@ -237,7 +262,6 @@ namespace ToDoList
         {
             AboutBoxInfo aboutMe = new AboutBoxInfo();
             aboutMe.Show();
-
         }
     }
 }
